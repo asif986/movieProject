@@ -1,0 +1,189 @@
+<div class="tv-layout">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="span12">
+
+
+                <div class="nav-row">
+                    <a href="index.html">
+                        <div class="round-box back-arrow">
+                            <img src="assets/images/icons/arrow-back.png">
+                        </div>
+                    </a>
+
+                    <a href="index.html">
+                        <div class="round-box close-icon">
+                            <img src="assets/images/icons/close-icon.png">
+                        </div>
+                    </a>
+
+                </div>
+
+
+                <div class="tv-data-row">
+
+
+                    <div class="col-12">
+
+                        <div class="seach-box">
+                            <div class="input-group">
+                                <span class="input-search">
+<img src="assets/images/icons/search-icon.png">
+</span>
+                                <input type="text" class="form-control" [(ngModel)]="searchMovieString" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+
+
+
+                        <div class="search-block-iteams">
+                            <div class="recent-search">
+                                <h1>Recent Search Iteams</h1>
+
+                                <div class="seach-item">
+                                    <span>
+<img src="assets/images/icons/reload-icon.png">
+Jathi Ratnalu Movie
+</span>
+                                </div>
+
+                                <div class="seach-item">
+                                    <span>
+<img src="assets/images/icons/reload-icon.png">
+Kids English Telugu Dubbed Movies
+</span>
+                                </div>
+
+                                <div class="seach-item">
+                                    <span>
+<img src="assets/images/icons/reload-icon.png">
+3D Animation Movies
+</span>
+                                </div>
+
+                                <div class="seach-item">
+                                    <span>
+<img src="assets/images/icons/reload-icon.png">
+Action Movies in Telugu 2020
+</span></div>
+                            </div>
+
+                            <div class="key-board-box" id="show-numbers" *ngIf="hideNumberKeyword">
+                                <div class="key-board-row">
+                                    <span class="key"><button value="1" (click)="keyboard($event)">1</button></span>
+                                    <span class="key"><button value="2" (click)="keyboard($event)">2</button></span>
+                                    <span class="key"><button value="3" (click)="keyboard($event)">3</button></span>
+                                    <span class="key"><button value="&" (click)="keyboard($event)"> & </button></span>
+                                    <span class="key"><button value="#" (click)="keyboard($event)"> # </button></span>
+                                    <span class="key"><button value="(" (click)="keyboard($event)"> ( </button></span>
+                                    <span class="key"><button value=")" (click)="keyboard($event)"> ) </button></span>
+                                    <span class="arrow-change"><button  (click)="clear()">
+<img src="assets/images/icons/clear-icon.png">
+</button></span>
+                                </div>
+
+                                <div class="key-board-row">
+                                    <span class="key"><button value="4" (click)="keyboard($event)">4</button></span>
+                                    <span class="key"><button value="5" (click)="keyboard($event)">5</button></span>
+                                    <span class="key"><button value="6" (click)="keyboard($event)">6</button></span>
+                                    <span class="key"><button value="@" (click)="keyboard($event)"> @ </button></span>
+                                    <span class="key"><button value="!" (click)="keyboard($event)"> ! </button></span>
+                                    <span class="key"><button value="?" (click)="keyboard($event)"> ? </button></span>
+                                    <span class="key"><button value=":" (click)="keyboard($event)"> : </button></span>
+                                    <span class="arrow-change show-alpabets"><button (click)="showAlphabetKeyboard()">& ABC</button></span>
+                                </div>
+
+                                <div class="key-board-row">
+                                    <span class="key"><button value="7" (click)="keyboard($event)" >7</button></span>
+                                    <span class="key"><button value="8" (click)="keyboard($event)">8</button></span>
+                                    <span class="key"><button value="9" (click)="keyboard($event)">9</button></span>
+                                    <span class="key"><button value="0" (click)="keyboard($event)">0</button></span>
+                                    <span class="key"><button value="." (click)="keyboard($event)"> . </button></span>
+                                    <span class="key"><button value="_" (click)="keyboard($event)"> _ </button></span>
+                                    <span class="key"><button value='"' (click)="keyboard($event)"> " </button></span>
+                                </div>
+
+
+                                <div class="key-board-row">
+                                    <span class="space-clear"><button (click)="space()">SPACE</button></span>
+                                    <span class="space-clear"><button (click)="clear()">CLEAR</button></span>
+                                    <span class="search-btn"><a href="search-results.html"><button (click)="searchMovie()">SEARCH</button></a></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="key-board-box" id="show-alpabets" *ngIf="hideAlphabetKeyword">
+                                <div class="key-board-row">
+                                    <span class="key"><button   value="A" (click)="keyboard($event)">A</button></span>
+                                    <span class="key"><button   value="B" (click)="keyboard($event)">B</button></span>
+                                    <span class="key"><button   value="C" (click)="keyboard($event)">C</button></span>
+                                    <span class="key"><button   value="D" (click)="keyboard($event)">D</button></span>
+                                    <span class="key"><button   value="E" (click)="keyboard($event)">E</button></span>
+                                    <span class="key"><button   value="F" (click)="keyboard($event)">F</button></span>
+                                    <span class="key"><button   value="G" (click)="keyboard($event)">G</button></span>
+                                    <span class="arrow-change"><button>
+<img src="assets/images/icons/clear-icon.png">
+</button></span>
+                                </div>
+
+                                <div class="key-board-row">
+                                    <span class="key"><button  value="H" (click)="keyboard($event)">H</button></span>
+                                    <span class="key"><button  value="I" (click)="keyboard($event)">I</button></span>
+                                    <span class="key"><button  value="J" (click)="keyboard($event)">J</button></span>
+                                    <span class="key"><button  value="K" (click)="keyboard($event)">K</button></span>
+                                    <span class="key"><button  value="L" (click)="keyboard($event)">L</button></span>
+                                    <span class="key"><button  value="M" (click)="keyboard($event)">M</button></span>
+                                    <span class="key"><button  value="N" (click)="keyboard($event)">N</button></span>
+                                    <span class="arrow-change show-numbers"><button (click)="showNumbericKeyboard(1)"> 123</button></span>
+                                </div>
+
+                                <div class="key-board-row">
+                                    <span class="key"><button value="O" (click)="keyboard($event)">O</button></span>
+                                    <span class="key"><button value="P" (click)="keyboard($event)">P</button></span>
+                                    <span class="key"><button value="Q" (click)="keyboard($event)">Q</button></span>
+                                    <span class="key"><button value="R" (click)="keyboard($event)">R</button></span>
+                                    <span class="key"><button value="S" (click)="keyboard($event)">S</button></span>
+                                    <span class="key"><button value="T" (click)="keyboard($event)">T</button></span>
+                                    <span class="key"><button value="U" (click)="keyboard($event)">U</button></span>
+                                </div>
+
+                                <div class="key-board-row">
+                                    <span class="key"><button value="V" (click)="keyboard($event)"> V</button></span>
+                                    <span class="key"><button value="W" (click)="keyboard($event)"> W</button></span>
+                                    <span class="key"><button value="X" (click)="keyboard($event)"> X</button></span>
+                                    <span class="key"><button value="Y" (click)="keyboard($event)"> Y</button></span>
+                                    <span class="key"><button value="Z" (click)="keyboard($event)"> Z</button></span>
+                                    <span class="key"><button value="-" (click)="keyboard($event)"> -</button></span>
+                                    <span class="key"><button value="'" (click)="keyboard($event)"> '</button></span>
+                                </div>
+
+                                <div class="key-board-row">
+                                    <span class="space-clear"><button (click)="space()">SPACE</button></span>
+                                    <span class="space-clear"><button (click)="clear()">CLEAR</button></span>
+                                    <span class="search-btn"><button (click)="searchMovie()">SEARCH</button></span>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

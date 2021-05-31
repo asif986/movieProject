@@ -1,0 +1,63 @@
+<div class="tv-layout">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="span12">
+
+                <div class="nav-row">
+                    <a [routerLink]="['/searchMovie']" routerLinkActive="router-link-active">
+                        <div class="round-box back-arrow">
+                            <img src="assets/images/icons/arrow-back.png">
+                        </div>
+                    </a>
+
+                    <a [routerLink]="['/searchMovie']">
+                        <div class="round-box close-icon">
+                            <img src="assets/images/icons/close-icon.png">
+                        </div>
+                    </a>
+
+                </div>
+
+
+                <div class="tv-data-row">
+                    <h1>Search Results </h1>
+
+                    <div class="col-12">
+
+                        <div class="search-results" *ngIf="searchedMovie.length>0">
+
+                            <div class="item" *ngFor="let movie of searchedMovie">
+                                <a href="#" *ngIf="movie.poster_path !=null">
+                                    <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+                                    <p class="movie-name">{{movie.original_title}} ({{movie.original_language}})</p>
+                                </a>
+                                <a href="#" *ngIf="movie.poster_path ==null">
+                                    <img src="http://filmcompleta.xyz/assets/img/no_poster.jpg">
+                                    <p class="movie-name">{{movie.original_title}} ({{movie.original_language}})</p>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="search-results" *ngIf="searchedMovie.length<=0">
+
+                            <h3>Sorry,Movie Not Found.</h3>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
