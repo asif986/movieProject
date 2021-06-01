@@ -23,6 +23,13 @@ export class SearchmovieComponent implements OnInit {
   searchStr;
   movieName :string;
 
+  recentSearchMovies =[
+  {name:"Harry Potter",imgPath:"reload-icon.png"},
+  {name:"Kids",imgPath:"reload-icon.png"},
+  {name:"Jathi",imgPath:"reload-icon.png"},
+  {name:"3D Animation",imgPath:"reload-icon.png"}
+
+]
   constructor(public http: HttpClient, public router: Router) { }
 
   ngOnInit(): void {
@@ -60,6 +67,9 @@ export class SearchmovieComponent implements OnInit {
     this.searchMovieString = this.searchMovieString+" ";
 
   }
+  backClear(){
+    this.searchMovieString = this.searchMovieString.substring(0, this.searchMovieString.length - 1);
+  }
   searchMovie() {
     // ce87ece9f027f85d16babc316e51c491
 
@@ -71,5 +81,15 @@ export class SearchmovieComponent implements OnInit {
         console.log(e);
       })
 
+  }
+
+  recentSerachMovie(name:string){
+    this.http.get('https://api.themoviedb.org/3/search/movie?api_key=ce87ece9f027f85d16babc316e51c491&query=' + name)
+    .subscribe(res => {
+      console.log(res);
+      this.router.navigateByUrl('/searchResult', { state: res });
+    }, (e) => {
+      console.log(e);
+    }) 
   }
 }

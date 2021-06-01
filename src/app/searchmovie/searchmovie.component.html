@@ -42,32 +42,16 @@
                             <div class="recent-search">
                                 <h1>Recent Search Iteams</h1>
 
-                                <div class="seach-item">
+                                <div class="seach-item" *ngFor="let r of recentSearchMovies" (click)="recentSerachMovie(r.name)">
                                     <span>
-<img src="assets/images/icons/reload-icon.png">
-Jathi Ratnalu Movie
+<img src="assets/images/icons/{{r.imgPath}}">
+{{r.name}}
 </span>
                                 </div>
 
-                                <div class="seach-item">
-                                    <span>
-<img src="assets/images/icons/reload-icon.png">
-Kids English Telugu Dubbed Movies
-</span>
-                                </div>
 
-                                <div class="seach-item">
-                                    <span>
-<img src="assets/images/icons/reload-icon.png">
-3D Animation Movies
-</span>
-                                </div>
 
-                                <div class="seach-item">
-                                    <span>
-<img src="assets/images/icons/reload-icon.png">
-Action Movies in Telugu 2020
-</span></div>
+
                             </div>
 
                             <div class="key-board-box" id="show-numbers" *ngIf="hideNumberKeyword">
@@ -124,7 +108,7 @@ Action Movies in Telugu 2020
                                     <span class="key"><button   value="E" (click)="keyboard($event)">E</button></span>
                                     <span class="key"><button   value="F" (click)="keyboard($event)">F</button></span>
                                     <span class="key"><button   value="G" (click)="keyboard($event)">G</button></span>
-                                    <span class="arrow-change"><button>
+                                    <span class="arrow-change"><button (click)="backClear()">
 <img src="assets/images/icons/clear-icon.png">
 </button></span>
                                 </div>
